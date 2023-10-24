@@ -13,10 +13,19 @@ package recursion;
  */
 public class Program03 {
     public int climbStairs(int n) {
-        if (n == 1 || n == 2) {
-            return n;
+        return solve(n, 0);
+    }
+
+    // just create a recursion tree to solve this
+    int solve(int totalStairs, int currentPosition) {
+        if (currentPosition == totalStairs) {
+            return 1;
         }
 
-        return climbStairs(n - 1) + climbStairs(n - 2);
+        if (currentPosition > totalStairs) {
+            return 0;
+        }
+
+        return solve(totalStairs, currentPosition + 1) + solve(totalStairs, currentPosition + 2);
     }
 }
