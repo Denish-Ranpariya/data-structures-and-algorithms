@@ -3,7 +3,7 @@ package linked_list;
 /**
  * leetcode 25. Reverse Nodes in k-Group
  * <p>
- * IMP
+ * MMIMP
  */
 public class Program08 {
     private static int getLength(ListNode head) {
