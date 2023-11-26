@@ -7,6 +7,8 @@ public class Node {
 
     Node bottom;
 
+    Node random;
+
     Node() {
     }
 
@@ -14,9 +16,10 @@ public class Node {
         this.data = val;
     }
 
-    Node(int val, Node next) {
+    Node(int val, Node next, Node random) {
         this.data = val;
         this.next = next;
+        this.random = random;
     }
 }
 
