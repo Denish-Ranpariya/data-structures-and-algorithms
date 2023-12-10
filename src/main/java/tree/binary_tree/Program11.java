@@ -1,35 +1,42 @@
-package binary_tree;
+package tree.binary_tree;
+
+import tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
- * GFG - Left View of Binary Tree
+ * Leetcode 199. Binary Tree Right Side View
  */
-public class Program10 {
-    ArrayList<Integer> result; // used for M-2
+public class Program11 {
+
+    // M-2 using recursion
+    // NRL
+    // when level is equal to size of result then add current node to result
+    List<Integer> result;
 
     // M-1 using level order traversal
-    // take first element at every level
-    public ArrayList<Integer> leftView1(Node root) {
-        ArrayList<Integer> result = new ArrayList<>();
+    // take last element at every level
+    public List<Integer> rightSideView1(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
         if (root == null) {
             return result;
         }
 
-        Queue<Node> q = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList<>();
 
         q.add(root);
 
         while (!q.isEmpty()) {
             int size = q.size();
 
-            //add first element of level to result
-            result.add(q.peek().data);
+            TreeNode current = null;
 
             for (int i = 0; i < size; i++) {
-                Node current = q.remove();
+                current = q.remove();
+
                 if (current.left != null) {
                     q.add(current.left);
                 }
@@ -37,36 +44,34 @@ public class Program10 {
                 if (current.right != null) {
                     q.add(current.right);
                 }
-            }
-        }
 
+            }
+
+            //insert last element of current level in result
+            result.add(current.val);
+        }
         return result;
     }
 
-    // M-2 using recursion
-    // preorder traversal - NLR
-    // when level is equal to size of result then add current node to result
-    public ArrayList<Integer> leftView2(Node root) {
+    public List<Integer> rightSideView2(TreeNode root) {
         result = new ArrayList<>();
-
         //initial level is zero
         solve(root, 0);
-
         return result;
     }
 
-    void solve(Node root, int level) {
+    void solve(TreeNode root, int level) {
         if (root == null) {
             return;
         }
 
         // level is equal to size of result then add current node to result
         if (level == result.size()) {
-            result.add(root.data);
+            result.add(root.val);
         }
 
-        //call for left and right subtree also level + 1
-        solve(root.left, level + 1);
+        //call for right and left subtree also level + 1
         solve(root.right, level + 1);
+        solve(root.left, level + 1);
     }
 }

@@ -1,4 +1,6 @@
-package binary_tree;
+package tree.binary_tree;
+
+import tree.TreeNode;
 
 /**
  * Leetcode 104. Maximum Depth/Height of Binary Tree

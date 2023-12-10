@@ -1,4 +1,6 @@
-package binary_tree;
+package tree.binary_tree;
+
+import tree.TreeNode;
 
 /**
  * leetcode 236. Lowest Common Ancestor of a Binary Tree

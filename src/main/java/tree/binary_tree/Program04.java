@@ -1,4 +1,6 @@
-package binary_tree;
+package tree.binary_tree;
+
+import tree.TreeNode;
 
 /**
  * Leetcode 543. Diameter of Binary Tree

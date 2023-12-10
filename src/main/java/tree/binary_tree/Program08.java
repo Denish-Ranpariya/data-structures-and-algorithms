@@ -1,4 +1,6 @@
-package binary_tree;
+package tree.binary_tree;
+
+import tree.TreeNode;
 
 /**
  * Leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal
