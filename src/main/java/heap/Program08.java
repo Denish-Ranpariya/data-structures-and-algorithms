@@ -6,6 +6,8 @@ import java.util.PriorityQueue;
 /**
  * Leetcode 632. Smallest Range Covering Elements from K Lists
  * <p>
+ * MIMP
+ * <p>
  * For explanation -> one note -> heaps
  */
 public class Program08 {
