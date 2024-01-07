@@ -1,18 +1,30 @@
 package tries;
 
-public class TrieNode {
-    char value;
+class TrieNode {
+    private char value;
+    private TrieNode[] children;
+    private boolean isTerminal;
 
-    TrieNode[] children;
-
-    boolean isTerminal;
-
-    public TrieNode(char value) {
+    TrieNode(char value, boolean isTerminal) {
         this.value = value;
-        this.children = new TrieNode[26]; //26 letters in alphabets
+        this.isTerminal = isTerminal;
 
-        for (int i = 0; i < 26; i++) {
-            this.children[i] = null;
-        }
+        this.children = new TrieNode[26];
+    }
+
+    public boolean getIsTerminal() {
+        return this.isTerminal;
+    }
+
+    public void setIsTerminal(boolean isTerminal) {
+        this.isTerminal = isTerminal;
+    }
+
+    public TrieNode[] getChildren() {
+        return this.children;
+    }
+
+    public void setChildren(TrieNode[] children) {
+        this.children = children;
     }
 }
