@@ -12,6 +12,14 @@ class TrieNode {
         this.children = new TrieNode[26];
     }
 
+    public char getValue() {
+        return value;
+    }
+
+    public void setValue(char value) {
+        this.value = value;
+    }
+
     public boolean getIsTerminal() {
         return this.isTerminal;
     }

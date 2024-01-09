@@ -1,7 +1,7 @@
 package tries;
 
 class Trie {
-    TrieNode root;
+    private TrieNode root;
 
     public Trie() {
         root = new TrieNode('/', false);
@@ -77,5 +77,9 @@ class Trie {
         }
 
         return true;
+    }
+
+    public TrieNode getRoot() {
+        return root;
     }
 }
